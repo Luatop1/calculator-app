@@ -11,7 +11,7 @@ def solve():
         calc.insert(0, "Ошибка")
 
 def add_num(btn):
-    if btn["text"] != "√" and btn["text"] != "π" and btn["text"] != "e" and btn["text"] != "φ":
+    if btn["text"] != "√" and btn["text"] != "π" and btn["text"] != "e":
         try:
             if calc.get()[len(calc.get()) - 1] == "(":
                 calc.insert(len(calc.get()), f"{btn["text"]})")
@@ -26,8 +26,6 @@ def add_num(btn):
             calc.insert(len(calc.get()), "3.14159265359")
         elif btn["text"] == "e":
             calc.insert(len(calc.get()), "2.71828182846")
-        elif btn["text"] == "φ":
-            calc.insert(len(calc.get()), "1.6180339887")
 
 root = tk.Tk()
 
@@ -95,7 +93,7 @@ btn_pi.place(x=80, y=170)
 btn_eller = tk.Button(root, bg="#E5E5E5", text="e", height=1, width=2, font=("Arial", 15), command=lambda: add_num(btn_eller))
 btn_eller.place(x=43, y=170)
 
-btn_f = tk.Button(root, bg="#E5E5E5", text="φ", height=1, width=2, font=("Arial", 15), command=lambda: add_num(btn_f))
-btn_f.place(x=5, y=170)
+btn_dot = tk.Button(root, bg="#E5E5E5", text=".", height=1, width=2, font=("Arial", 15), command=lambda: add_num(btn_dot))
+btn_dot.place(x=5, y=170)
 
 root.mainloop()
